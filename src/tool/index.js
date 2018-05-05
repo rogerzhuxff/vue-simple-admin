@@ -4,9 +4,8 @@ import router from '../router' //加载路由
 import _g from './global' //加载公共方法
 window.debug = true;
 import Router from 'vue-router'
-//axios.defaults.baseURL = 'http://localhost:8080' //接口地址
-// axios.defaults.baseURL = 'http://www.xuhuifeng.online/test' //接口地址
-axios.defaults.baseURL = 'http://106.14.163.77/test' //接口地址
+axios.defaults.baseURL = 'http://localhost:8082' //接口地址
+//axios.defaults.baseURL = 'http://www.xuhuifeng.online/test' //接口地址
 
 axios.defaults.timeout = 1000 * 60 //请求超时时间
 axios.defaults.withCredentials = true

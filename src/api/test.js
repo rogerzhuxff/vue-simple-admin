@@ -7,7 +7,7 @@ export const login = params => { return apiPost('/login/dologin', params).then(d
 export const logout = () => { return apiPost('/login/logout').then(data => data); };
 
 //模拟请求数据
-export const helloWorld = () => { return apiPost('/hello/world').then(data => data); };
+export const helloWorld = () => { return apiPost('/hw/t1').then(data => data); };
 
 //获取员工列表
 export const getEmpList = params => { return apiPost('/emp/getEmpList',params).then(data => data); };

@@ -44,7 +44,7 @@ export default {
       })
     },
     addEmp(){
-      let ata = {"username":"Rsadar","age":"1","email":"xx@ss.com","password":"xT877699xxx"};
+      let ata = {"empname":"小橘子","age":"1","email":"xiaojuzi@ff.com","birthday":"2017-02-13"};
       addEmp(ata).then(data=>{
        console.log('add',data);
       })

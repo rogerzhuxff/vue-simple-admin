@@ -4,6 +4,7 @@
   <el-card class="box-card">
     <div slot="header" class="clearfix">
       <span>员工基础信息 增删改查</span>
+      <el-button @click="logout()">退出</el-button>
     </div>
     <el-row class="title">
       <el-col :span="24">
@@ -58,10 +59,10 @@
         <el-input v-model="form.age"></el-input>
       </el-form-item>‘
       <el-form-item label="出生">
-        <el-input v-model="form.birthday"></el-input>
+        <el-input v-model="form.birthday" ></el-input>
       </el-form-item>
       <el-form-item label="部门">
-        <el-input v-model="form.deptname"></el-input>
+        <el-input v-model="form.deptname" :disabled="true"></el-input>
       </el-form-item>‘
       <el-form-item label="奖金">
         <el-input v-model="form.bonus"></el-input>
@@ -93,7 +94,8 @@ import {
   getEmpList,
   addEmp,
   deleteEmp,
-  updateEmp
+  updateEmp,
+  logout
 } from '../../api/test'
 export default {
   name: 'emp',
@@ -170,6 +172,16 @@ export default {
     handleDelete(index, row) {
       this.deleteId = row.id;
       this.dialogVisibleDel = true;
+    },
+    logout(){
+      logout().then(data=>{
+        if(data.code==200){
+          this.$router.push({path:'/login'});
+        }else {
+          _g.toastMsg('warning',data.msg);
+        }
+
+      })
     }
   },
   computed: {
